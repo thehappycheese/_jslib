@@ -30,9 +30,14 @@ function Canvas(acanvasID){
 		this.canvas.height = i;
 	}).bind(this));
 	
+	this.setSize = (function(w,h){
+		this.width = w;
+		this.height = h;
+	}).bind(this);
 	// ============  FUNCTIONS  =======================
 	
 	this.fillContainer = (function(){
+		/*
 		var container = this.canvas.parentNode;
 		
 		this.canvas.style.width = "0";
@@ -56,7 +61,7 @@ function Canvas(acanvasID){
 		this.canvas.style.width = this.canvas.width.toFixed(0)+"px";
 		this.canvas.style.height = this.canvas.height.toFixed(0)+"px";
 		
-		this.dispatch("resize",{w:aw,h:ah});
+		this.dispatch("resize",{w:aw,h:ah});*/
 		
 	}).bind(this);
 	
@@ -70,6 +75,12 @@ function Canvas(acanvasID){
 			elem.webkitRequestFullscreen()
 			elem.webkitRequestPointerLock();
 		}
+	}).bind(this);
+	
+	
+	
+	this.clear = (function(){
+		this.ctx.clearRect(0, 0, this.width, this.height);
 	}).bind(this);
 	
 	

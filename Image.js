@@ -1,7 +1,7 @@
 
 
 
-function Image(url, acolumns, arows){
+function nImage(url, acolumns, arows){
 	"use strict";
 	
 	this.canvas = document.createElement("canvas");
@@ -59,7 +59,8 @@ function Image(url, acolumns, arows){
 			ctx.rotate(r);
 			var xx = f%this.columns;
 			var yy = Math.floor(f/this.columns);
-			ctx.drawImage(this.canvas,  xx*this.dx,yy*this.dy,this.dx,this.dy, -this.dx/2, -this.dy/2, this.dx, this.dy);
+			//ctx.drawImage(this.canvas,  xx*this.dx,yy*this.dy,this.dx,this.dy, -this.dx/2, -this.dy/2, this.dx, this.dy);
+			ctx.drawImage(this.canvas,  xx*this.dx,yy*this.dy,this.dx,this.dy, 0, 0, this.dx, this.dy);
 		ctx.restore();
 	}).bind(this);
 
