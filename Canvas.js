@@ -14,7 +14,21 @@ function Canvas(acanvasID){
 	
 	this.currentTime = (new Date()).getTime();
 	this.previousTime = this.currentTime;
+	// =========== GETTER SETTERS ================
 	
+	this.__defineGetter__("width", (function(){
+		return this.canvas.width;
+	}).bind(this));
+	this.__defineSetter__("width", (function(i){
+		this.canvas.width = i;
+	}).bind(this));
+	
+	this.__defineGetter__("height", (function(){
+		return this.canvas.height;
+	}).bind(this));
+	this.__defineSetter__("height", (function(i){
+		this.canvas.height = i;
+	}).bind(this));
 	
 	// ============  FUNCTIONS  =======================
 	
