@@ -36,8 +36,8 @@ function Canvas(acanvasID){
 	}).bind(this);
 	// ============  FUNCTIONS  =======================
 	
-	this.fillContainer = (function(){
-		/*
+	/*this.fillContainer = (function(){
+		
 		var container = this.canvas.parentNode;
 		
 		this.canvas.style.width = "0";
@@ -61,9 +61,9 @@ function Canvas(acanvasID){
 		this.canvas.style.width = this.canvas.width.toFixed(0)+"px";
 		this.canvas.style.height = this.canvas.height.toFixed(0)+"px";
 		
-		this.dispatch("resize",{w:aw,h:ah});*/
+		this.dispatch("resize",{w:aw,h:ah});
 		
-	}).bind(this);
+	}).bind(this);*/
 	
 	
 	
@@ -130,6 +130,6 @@ function Canvas(acanvasID){
 	// == INIT CALLS ==
 	EventDispatcher.call(this);
 	InputReciever.call(this, this.canvas);
-	this.fillContainer();
+	//this.fillContainer();
 	window.requestAnimationFrame(this.animate);
 }
